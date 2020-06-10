@@ -1,0 +1,25 @@
+<mat-dialog-content>
+
+    <form [formGroup]="cardForm">
+        <div class="form-group">
+            <h2 for="groupControl" class="modal-header">Add Card</h2>
+            <div class="layout-padding">
+                <input formControlName="card"
+                       class="form-control"
+                       id="card"
+                       placeholder="Enter card name"
+                       required>
+
+
+            </div>
+        </div>
+    </form>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button (click)="addCard()" [disabled]="!cardForm.valid"
+            class="btn btn-success">Add</button>
+    <button class="mat-raised-button"
+            (click)="close()">Close</button>
+</mat-dialog-actions>

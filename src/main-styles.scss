@@ -1,0 +1,22 @@
+
+/* GLOBAL STYLES */
+html {
+    background-size: cover;
+
+    overflow-y: auto !important;
+}
+
+button {
+    background-color: #6200ee;
+    height: 36px;
+    padding: 5px;
+    border: 0;
+    cursor: pointer;
+    min-width: 100px;
+
+    &:disabled{
+        background-color: #bfbebe;
+        color: #fff;
+        cursor: not-allowed;
+    }
+}

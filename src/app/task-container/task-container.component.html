@@ -1,0 +1,16 @@
+<div class="board">
+<div class="board-bar">
+    <span class="board-name">Tavisca Sprint board</span>
+           
+</div>
+<div class="board-wrapper">
+ <a class="add-button" (click)="createList()">+ Add another list</a>
+<div class="board-columns" cdkDropListGroup>
+<div *ngFor="let task of taskList; trackBy:trackItem" class="task-container board-column">
+        <div  class="column-title">{{task.name}}</div>
+        <app-card [task]="task"></app-card>
+
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,153 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import 'main-styles.scss';
+// @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.mat-dialog-container {
+      width: 450px !important;
+      height: 300px !important;
+       position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+/* Modal Header */
+.modal-header {
+  padding: 2px 16px;
+  color: #6200ee;
+}
+
+/* Modal Body */
+.modal-body {padding: 2px 16px;}
+
+/* Add Animation */
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.add-button {
+  color: #FFF !important;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  text-decoration: underline;
+  }
+
+.column-title {
+                    font-size: 20px;
+                    font-weight: 800;
+                    font-family: 'Lato', sans-serif;
+                    text-transform: uppercase;
+                    margin-bottom: 20px;
+                }
+
+                
+.board {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    background: #0b254d;
+
+    .board-bar {
+        background: rgba(gray, 0.5);
+        padding: 8px 15px;
+    
+        .board-name {
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
+    }
+
+    .board-wrapper {
+        // display: flex;
+        flex-grow: 1;
+        overflow-x: auto;
+
+        .board-columns {
+            display: flex;
+            flex-grow: 1;
+            height: calc(100% - 75px);
+
+            .board-column {
+                display: flex;
+                flex-direction: column;
+                flex-grow: 1;
+                flex-basis: 0; // to force the columns to all be the same size, regardless of content
+                min-width: 150px;
+                margin: 30px;
+                padding: 25px;
+                border-radius: 4px;
+                background: #fff;
+
+                .add-button{
+                    color:#0b254d !important;
+                }
+                &:not(:first-child) {
+                    margin-left: 0;
+                }
+
+                .column-title {
+                    font-size: 20px;
+                    font-weight: 800;
+                    font-family: 'Lato', sans-serif;
+                    text-transform: uppercase;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}
+
+.task {
+    display: flex;
+    padding: 15px 12px;
+    border: solid 2px #455266;
+    border-radius: 4px;
+
+    margin-bottom: 15px;
+
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.05),
+    0 3px 14px 2px rgba(0, 0, 0, 0.05);
+}
+
+.cdk-drag-preview {
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+                0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+    opacity: 0;
+}
+
+.cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.tasks-container.cdk-drop-list-dragging .task:not(.cdk-drag-placeholder) {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}

@@ -1,0 +1,12 @@
+<div>
+    <a (click)="openCreateCard(task)"
+            class="add-button">+ Add Card</a>
+
+</div>
+<div cdkDropList [cdkDropListData]="task.cards" (cdkDropListDropped)="drop($event)" class="task-container" id="{{task.id}}">
+<ng-container *ngFor="let card of task.cards; trackBy: trackItem">
+    <div class="card" cdkDrag>
+      <span class="task" > {{card.name}}</span>
+    </div>
+</ng-container>
+</div>
